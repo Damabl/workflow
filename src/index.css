@@ -22,19 +22,46 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 262.1 83.3% 57.8%;
     --radius: 0.75rem;
+    
+    /* New color palette */
+    --navy: 210 50% 20%;
+    --navy-light: 210 40% 30%;
+    --coral: 15 75% 45%;
+    --coral-light: 15 70% 55%;
+    --sage: 150 20% 65%;
+    --slate: 215 20% 65%;
+    --cream: 40 30% 95%;
+    --charcoal: 220 15% 18%;
   }
 }
 
 /* Custom gradient backgrounds */
 .gradient-workflow {
-  background: linear-gradient(135deg, #114A65 0%, #114A65 50%, #B8400E 100%);
+  background: linear-gradient(135deg, #1E3A5F 0%, #2D4A6B 50%, #C95A1A 100%);
 }
 
 .gradient-text-workflow {
-  background: linear-gradient(135deg, #114A65 0%, #B8400E 100%);
+  background: linear-gradient(135deg, #1E3A5F 0%, #2D4A6B 50%, #C95A1A 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+/* Modern gradient backgrounds */
+.gradient-hero {
+  background: linear-gradient(135deg, rgba(30, 58, 95, 0.95) 0%, rgba(45, 74, 107, 0.9) 50%, rgba(201, 90, 26, 0.85) 100%);
+}
+
+.gradient-accent {
+  background: linear-gradient(135deg, #C95A1A 0%, #E67E22 100%);
+}
+
+.gradient-soft {
+  background: linear-gradient(135deg, #F8F9FA 0%, #E9ECEF 100%);
+}
+
+.gradient-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.98) 100%);
 }
 
 @layer base {
@@ -64,19 +91,232 @@ html {
   }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
 .animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.8s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s ease-out;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }
 
 /* Card hover effects */
 .card-hover {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   will-change: transform;
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .card-hover:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px -10px rgba(30, 58, 95, 0.15), 0 0 0 1px rgba(201, 90, 26, 0.1);
+  border-color: rgba(201, 90, 26, 0.2);
+}
+
+/* Button animations */
+.btn-animate {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-animate::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-animate:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-animate:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(201, 90, 26, 0.35), 0 4px 12px rgba(201, 90, 26, 0.2);
+  filter: brightness(1.05);
+}
+
+.btn-animate:active {
+  transform: translateY(0);
+}
+
+/* Image hover effects */
+.image-hover {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-hover:hover {
+  transform: scale(1.05);
+}
+
+/* Gradient text animation */
+.gradient-text-animated {
+  background: linear-gradient(135deg, #1E3A5F 0%, #2D4A6B 50%, #C95A1A 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+/* Elegant text styles */
+.text-elegant {
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+
+.text-soft-shadow {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Section animations */
+.section-fade-in {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.section-fade-in:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.section-fade-in:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.section-fade-in:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* Stagger animation for cards */
+.stagger-item {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.stagger-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.stagger-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.stagger-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.stagger-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* Smooth transitions */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Elegant section dividers */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(201, 90, 26, 0.2) 50%, transparent 100%);
+  margin: 60px 0;
+}
+
+/* Modern glass effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Subtle glow */
+.subtle-glow {
+  box-shadow: 0 0 20px rgba(201, 90, 26, 0.1), 0 0 40px rgba(30, 58, 95, 0.05);
 }
 
 /* Mobile optimizations */
@@ -85,4 +325,26 @@ html {
     padding-left: 1rem;
     padding-right: 1rem;
   }
+  
+  /* Reduce animations on mobile for performance */
+  .animate-float {
+    animation: none;
+  }
+}
+
+/* Loading skeleton */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.skeleton {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
 }

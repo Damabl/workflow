@@ -29,14 +29,15 @@ const advantages = [
 
 export function AdvantagesSection() {
   return (
-    <section className="w-full bg-white px-4 md:px-[120px] py-12 md:py-[100px]">
+    <section className="w-full bg-white px-4 md:px-[120px] py-12 md:py-[100px] animate-fade-in-up">
       <div className="flex flex-col gap-8 md:gap-16 w-full max-w-[1200px] mx-auto">
         <h2 
-          className="font-bold text-center text-[#202124] tracking-[-2px] text-2xl md:text-4xl lg:text-[64px]"
+          className="font-bold text-center tracking-[-2px] text-2xl md:text-4xl lg:text-[64px] animate-scale-in text-elegant"
           style={{ 
             lineHeight: '64px',
             fontFamily: "'Open Sans', sans-serif",
-            fontWeight: 700
+            fontWeight: 700,
+            color: '#1E3A5F'
           }}
         >
           НАШЕ ПРЕИМУЩЕСТВА
@@ -48,24 +49,32 @@ export function AdvantagesSection() {
             return (
               <div 
                 key={index} 
-                className="flex flex-col items-center gap-4 md:gap-6"
+                className="flex flex-col items-center gap-4 md:gap-6 stagger-item group cursor-default"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div 
-                  className="flex items-center justify-center rounded-full flex-shrink-0"
+                  className="flex items-center justify-center rounded-full flex-shrink-0 transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg"
                   style={{
                     width: '64px',
                     height: '64px',
-                    background: '#F7F8FA',
-                    padding: '12px'
+                    background: 'linear-gradient(135deg, #F8F9FA 0%, #E9ECEF 100%)',
+                    padding: '12px',
+                    border: '1px solid rgba(201, 90, 26, 0.1)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = 'rgba(201, 90, 26, 0.15)'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'linear-gradient(135deg, #F8F9FA 0%, #E9ECEF 100%)'
                   }}
                 >
                   <Icon 
-                    className="text-[#B8400E]" 
-                    style={{ width: '40px', height: '40px', strokeWidth: 2 }}
+                    className="transition-all duration-300 group-hover:scale-110" 
+                    style={{ width: '40px', height: '40px', strokeWidth: 2, color: '#C95A1A' }}
                   />
                 </div>
                 <h3 
-                  className="font-bold text-center text-[#202124] uppercase text-sm md:text-lg lg:text-[24px]"
+                  className="font-bold text-center uppercase text-sm md:text-lg lg:text-[24px] transition-all duration-300"
                   style={{ 
                     lineHeight: '32px',
                     fontFamily: "'Open Sans', sans-serif",
@@ -75,10 +84,16 @@ export function AdvantagesSection() {
                     display: 'block',
                     visibility: 'visible',
                     opacity: 1,
-                    color: '#202124',
                     whiteSpace: 'normal',
                     wordWrap: 'break-word',
-                    overflow: 'visible'
+                    overflow: 'visible',
+                    color: '#2C3E50'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = '#C95A1A'
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = '#2C3E50'
                   }}
                 >
                   {advantage.text}
