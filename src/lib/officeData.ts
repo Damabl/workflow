@@ -51,7 +51,7 @@ export const officesData: OfficeDetails[] = [
       { src: "/Venus/TMK_11311.jpg", alt: "Venus офис - вид 3" },
       { src: "/Venus/TMK_11348.jpg", alt: "Venus офис - вид 4" },
       { src: "/Venus/TMK_11352.jpg", alt: "Venus офис - вид 5" },
-      { src: "/Venus/TMK_11257.jpg", alt: "Venus офис - вид 6" },
+      { src: "/Venus/TMK_11357.jpg", alt: "Venus офис - вид 6" },
       { src: "/Venus/TMK_11397.jpg", alt: "Venus офис - вид 7" },
       { src: "/Venus/TMK_11435.jpg", alt: "Venus офис - вид 8" },
       { src: "/Venus/TMK_11439.jpg", alt: "Venus офис - вид 9" },
