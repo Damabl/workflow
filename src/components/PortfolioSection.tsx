@@ -67,7 +67,7 @@ export function PortfolioSection() {
           </p>
         </div>
           <div className="w-full overflow-hidden mt-6">
-              <div className="flex gap-6 animate-scroll">
+              <div className="flex gap-6 animate-scroll" style={{ ['--scroll-duration' as any]: '8s' }}>
                   {carouselData.images.map((image, index) => (
                       <div
                           key={index}

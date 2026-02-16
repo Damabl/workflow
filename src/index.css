@@ -358,6 +358,7 @@ html {
 }
 
 .animate-scroll {
-  animation: scroll 25s linear infinite;
+  /* controllable duration via --scroll-duration (default 12s) */
+  animation: scroll var(--scroll-duration, 12s) linear infinite;
 }
 
