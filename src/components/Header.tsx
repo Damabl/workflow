@@ -7,8 +7,10 @@ export function Header() {
             <div className="w-12 h-12 rounded-xl flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#114A65] to-[#B8400E] p-1 shadow-lg transition-transform duration-300 group-hover:scale-105">
               <div className="w-full h-full rounded-lg bg-white flex items-center justify-center">
                 <img 
-                  src="/app-icon.png" 
+                  src="/app-icon.webp" 
                   alt="WorkFlow Icon" 
+                  loading="lazy"
+                  decoding="async"
                   className="w-10 h-10 rounded-lg object-cover"
                 />
               </div>

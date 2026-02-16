@@ -2,6 +2,7 @@ import { useState } from "react"
 import { Button } from "./ui/button"
 import { officesData } from "../lib/officeData"
 import { OfficeModal } from "./OfficeModal"
+import {carouselData} from "@/lib/carouselData.ts";
 
 export function PortfolioSection() {
   const [selectedOffice, setSelectedOffice] = useState<typeof officesData[0] | null>(null)
@@ -18,7 +19,7 @@ export function PortfolioSection() {
           : office.mainImage 
             ? [{ src: office.mainImage, alt: office.name }]
             : [],
-        mainImage: office.mainImage || '/og-image.jpg',
+        mainImage: office.mainImage || '/og-image.webp',
         name: office.name || 'Офис',
         location: office.location || 'Алматы',
         address: office.address || '',
@@ -65,7 +66,24 @@ export function PortfolioSection() {
             Наши пространства созданы для компаний, которым важны сервис, инфраструктура и рабочие решения, поддерживающие рост и эффективность.
           </p>
         </div>
-
+          <div className="w-full overflow-hidden mt-6">
+              <div className="flex gap-6 animate-scroll">
+                  {carouselData.images.map((image, index) => (
+                      <div
+                          key={index}
+                          className="min-w-[220px] h-[150px] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300"
+                      >
+                          <img
+                              src={image.src}
+                              alt={image.alt}
+                              loading="lazy"
+                              decoding="async"
+                              className="w-full h-full object-cover hover:scale-110 transition duration-500"
+                          />
+                      </div>
+                  ))}
+              </div>
+          </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 w-full max-w-[1200px]">
           {officesData.map((office) => (
             <div

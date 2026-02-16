@@ -114,11 +114,13 @@ export function OfficeModal({ office, isOpen, onClose }: OfficeModalProps) {
               <img
                 src={currentImage.src}
                 alt={currentImage.alt || office.name}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
                 onError={(e) => {
                   // Fallback если изображение не загрузилось
                   const target = e.target as HTMLImageElement
-                  target.src = office.mainImage || '/og-image.jpg'
+                  target.src = office.mainImage || '/og-image.webp'
                 }}
               />
               {images.length > 1 && (

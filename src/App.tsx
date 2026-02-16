@@ -6,6 +6,7 @@ import { AdvantagesSection } from "./components/AdvantagesSection"
 import { ContactFormSection } from "./components/ContactFormSection"
 import { Footer } from "./components/Footer"
 import { ThankYouPage } from "./components/ThankYouPage"
+import {ResidentsSection} from "@/components/ResidentsSection.tsx";
 
 function HomePage() {
   return (
@@ -14,6 +15,7 @@ function HomePage() {
       <PortfolioSection />
       <RatesSection />
       <AdvantagesSection />
+        <ResidentsSection />
       <ContactFormSection />
       <Footer />
     </div>

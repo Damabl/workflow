@@ -11,7 +11,7 @@ export function HeroSection() {
       <div 
         className="relative w-full rounded-[20px] md:rounded-[50px] overflow-hidden flex flex-col justify-end min-h-[400px] md:min-h-[709px] p-[40px_20px] md:p-[100px_49px] group subtle-glow"
         style={{ 
-          backgroundImage: 'linear-gradient(180deg, rgba(30, 58, 95, 0.3) 0%, rgba(30, 58, 95, 0.6) 50%, rgba(201, 90, 26, 0.75) 100%), url(/og-image.jpg)',
+          backgroundImage: 'linear-gradient(180deg, rgba(30, 58, 95, 0.3) 0%, rgba(30, 58, 95, 0.6) 50%, rgba(201, 90, 26, 0.75) 100%), url(/og-image.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           transition: 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -26,6 +26,13 @@ export function HeroSection() {
           e.currentTarget.style.boxShadow = '0 20px 60px rgba(30, 58, 95, 0.2)'
         }}
       >
+        <img
+          src="/app-icon-white.webp"
+          alt="App logo"
+          loading="lazy"
+          decoding="async"
+          className="absolute top-4 right-4 md:top-6 md:right-6 w-16 h-16 md:w-28 md:h-28 object-contain z-30"
+        />
         <div className="flex flex-col gap-4 md:gap-[35px] w-full max-w-full md:max-w-[863px] animate-fade-in-up">
           <div className="flex flex-col gap-3 md:gap-[15px] w-full max-w-full md:max-w-[863px]">
             <h1 

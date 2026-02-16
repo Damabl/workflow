@@ -93,7 +93,7 @@ export function ContactFormSection() {
               color: '#2C3E50'
             }}
           >
-            Заполните форму и команда Work Flow свяжется с вами
+            Заполните форму и команда Workflow свяжется с вами
           </p>
           
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
