@@ -40,8 +40,11 @@ export function ResidentsSection() {
                   <img
                     src={resident.logo}
                     alt={resident.name}
+                    width={160}
+                    height={80}
                     loading="lazy"
                     decoding="async"
+                    fetchPriority={index < 6 ? 'high' : 'low'}
                     className="max-h-16 md:max-h-20 object-contain"
                   />
                 </div>

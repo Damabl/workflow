@@ -76,8 +76,11 @@ export function PortfolioSection() {
                           <img
                               src={image.src}
                               alt={image.alt}
+                              width={220}
+                              height={150}
                               loading="lazy"
                               decoding="async"
+                              fetchPriority={index < 3 ? 'high' : 'low'}
                               className="w-full h-full object-cover hover:scale-110 transition duration-500"
                           />
                       </div>
